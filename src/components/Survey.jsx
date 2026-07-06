@@ -50,10 +50,10 @@ export default function Survey() {
                 onMouseLeave={() => setHover(0)}
                 onClick={() => setRating(value)}
                 aria-label={`${value} out of 5`}
-                className="cursor-pointer text-black"
+                className="cursor-pointer"
               >
-                {(hover || rating) >= value ? (
-                  <PiStarFill className="h-9 w-9" />
+                {(rating || hover) >= value ? (
+                  <PiStarFill className="h-9 w-9 text-yellow-400" />
                 ) : (
                   <PiStar className="h-9 w-9 text-neutral-300" />
                 )}
