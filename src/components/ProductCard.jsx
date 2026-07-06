@@ -6,7 +6,10 @@ import ClothingIcon from "@/components/ClothingIcon"
 
 export default function ProductCard({ product }) {
   const { add } = useCartState()
-  const [selectedColor, setSelectedColor] = useState(product.colors[0])
+  const preferredDefaults = ["Alpine Blue", "Glacier", "Black", "Forest"]
+  const defaultColor =
+    product.colors.find((c) => preferredDefaults.includes(c.name)) || product.colors[0]
+  const [selectedColor, setSelectedColor] = useState(defaultColor)
   const [selectedSize, setSelectedSize] = useState(null)
   const [added, setAdded] = useState(false)
 
