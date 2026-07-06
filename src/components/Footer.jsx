@@ -16,7 +16,7 @@ const columns = [
 export default function Footer() {
   return (
     <footer className="border-t border-neutral-200 bg-white">
-      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 px-6 py-16 md:grid-cols-4 md:gap-24">
+      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 px-6 py-16 md:grid-cols-4 md:gap-52">
         <div>
           <p className="font-brand text-2xl tracking-wide">Summit</p>
           <p className="mt-4 max-w-xs text-sm text-neutral-500">

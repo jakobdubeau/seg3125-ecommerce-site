@@ -6,6 +6,7 @@ import { useEffect, useRef, useState } from "react"
 import { CiSearch, CiUser } from "react-icons/ci"
 import { PiBagLight, PiXLight } from "react-icons/pi"
 import { useCartState } from "@/context/CartState"
+import Cart from "@/components/Cart"
 
 const links = [
   { label: "Women", href: "/shop?gender=women" },
@@ -19,6 +20,7 @@ export default function Navbar() {
   const { count } = useCartState()
   const router = useRouter()
   const [open, setOpen] = useState(false)
+  const [cartOpen, setCartOpen] = useState(false)
   const [term, setTerm] = useState("")
   const inputRef = useRef(null)
 
@@ -77,6 +79,7 @@ export default function Navbar() {
           </button>
           <button
             aria-label="Cart"
+            onClick={() => setCartOpen(true)}
             className="relative cursor-pointer text-neutral-700 hover:text-black"
           >
             <PiBagLight className="h-6.5 w-6.5" />
@@ -147,6 +150,8 @@ export default function Navbar() {
           </div>
         </>
       )}
+
+      <Cart open={cartOpen} onClose={() => setCartOpen(false)} />
     </header>
   )
 }
